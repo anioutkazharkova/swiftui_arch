@@ -7,25 +7,34 @@
 
 import SwiftUI
 
+protocol INewsListView: IInputView {
+}
+
 struct NewsListView: View {
    
     @ObservedObject var model: NewsListModel = NewsListModel()
     @State var isSearchActive: Bool = false
     
+    weak var parent: NewsListParent? = nil
+    
     var body: some View {
-        NavigationView {
             List(model.newsItems) {item in
                 NavigationLink(
                     destination: NewsItemView(item: item)) {
                     NewsItemRow(item: item)
                 }
                 .accessibilityElement()
-            }.navigationBarTitle("News", displayMode: .inline).navigationBarItems(trailing: NavigationLink(destination:SearchView()){
+            }.navigationBarTitle("News", displayMode: .inline).navigationBarItems(trailing: Button(action: {
+                self.parent?.showSearch()
+            }){
                 Image("search").resizable().frame(width: 20, height: 20, alignment: .topTrailing)
-            }).onAppear(){ 
-                self.model.loadData()
-            }
-        }
+            })
+    }
+}
+
+extension NewsListView : INewsListView {
+    func updateModel(data: Any?) {
+        self.model.update(data: data)
     }
 }
 
