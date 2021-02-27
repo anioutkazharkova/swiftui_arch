@@ -9,20 +9,16 @@ import SwiftUI
 
 struct SearchView: View {
     @State var text: String = ""
-    @ObservedObject var model: SearchModel = SearchModel()
     var body: some View {
         VStack {
             SearchControl(text: $text) { (search) in
-                self.model.loadData(query: search)
+              
             }
-                List(model.newsItems, id: \.uuid) {item in
-                    NavigationLink(
-                        destination: NewsItemView(item: item)) {
-                        NewsItemRow(item: item)
-                    }
-                }
+            List{
+                
             }
         }
+    }
 }
 
 struct SearchView_Previews: PreviewProvider {

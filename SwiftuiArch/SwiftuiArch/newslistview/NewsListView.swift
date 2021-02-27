@@ -8,23 +8,16 @@
 import SwiftUI
 
 struct NewsListView: View {
-   
-    @ObservedObject var model: NewsListModel = NewsListModel()
     @State var isSearchActive: Bool = false
     
     var body: some View {
         NavigationView {
-            List(model.newsItems) {item in
-                NavigationLink(
-                    destination: NewsItemView(item: item)) {
-                    NewsItemRow(item: item)
-                }
-                .accessibilityElement()
+            List{
             }.navigationBarTitle("News", displayMode: .inline).navigationBarItems(trailing: NavigationLink(destination:SearchView()){
-                Image("search").resizable().frame(width: 20, height: 20, alignment: .topTrailing)
-            }).onAppear(){ 
-                self.model.loadData()
-            }
+                Image("search").resizable()
+                    .frame(width: 20, height: 20,
+                           alignment: .topTrailing)
+            })
         }
     }
 }
