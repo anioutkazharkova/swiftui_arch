@@ -26,8 +26,8 @@ struct NewsListView: View {
         NavigationView {
             List(model.newsItems) {item in
                 NavigationLink(
-                    destination: NewsItemView(item: item)) {
-                    NewsItemRow(item: item)
+                    destination: LazyView(NewsItemView(item: item))) {
+                    LazyView(NewsItemRow(item: item))
                 }
             }.navigationBarTitle("News", displayMode: .inline).navigationBarItems(trailing: NavigationLink(destination:SearchView()){
                 Image("search").resizable().frame(width: 20, height: 20, alignment: .topTrailing)
