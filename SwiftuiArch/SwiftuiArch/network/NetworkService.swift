@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class NetworkService {
+    static let shared = NetworkService()
     lazy var urlSession: URLSession? = {
         return URLSession(configuration: .default)
     }()

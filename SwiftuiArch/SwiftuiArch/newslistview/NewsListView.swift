@@ -7,7 +7,17 @@
 
 import SwiftUI
 
+protocol INewsListView : IInputView {
+    
+}
+
 struct NewsListView: View {
+     var presenter: INewsListPresenter? = nil
+    
+    init() {
+        presenter = NewsListPresenter()
+        presenter?.view = self 
+    }
    
     @ObservedObject var model: NewsListModel = NewsListModel()
     @State var isSearchActive: Bool = false
@@ -19,15 +29,21 @@ struct NewsListView: View {
                     destination: NewsItemView(item: item)) {
                     NewsItemRow(item: item)
                 }
-                .accessibilityElement()
             }.navigationBarTitle("News", displayMode: .inline).navigationBarItems(trailing: NavigationLink(destination:SearchView()){
                 Image("search").resizable().frame(width: 20, height: 20, alignment: .topTrailing)
             }).onAppear(){ 
-                self.model.loadData()
+                self.presenter?.loadData()
             }
         }
     }
 }
+
+extension NewsListView : INewsListView {
+    func updateModel(data: Any?) {
+        self.model.update(data: data)
+    }
+}
+
 
 struct NewsListView_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,27 +9,14 @@ import Foundation
 import SwiftUI
 import Combine
 
-class NewsListModel : ObservableObject {
-    var subscriptions = Set<AnyCancellable>()
-    
-    private let service = NetworkService()
+class NewsListModel : ObservableObject, IModel {
     @Published var newsItems: [NewsItem] = [NewsItem]()
     
-    func loadData() {
-        let url = "top-headlines?language=en"
-      _ =  self.service.request(path: url, method: "GET").sink { [weak self] (completion) in
-        switch completion {
-        case .failure(let error):
-            print(error.localizedDescription)
-        case .finished:
-            print("completed")
+    func update(data: Any?) {
+        if let data = data as? [NewsItem] {
+            self.newsItems = [NewsItem]()
+            self.newsItems.append(contentsOf: data)
         }
-      } receiveValue: { (list:NewsList) in
-        let loaded = list.articles
-        self.newsItems = loaded
-        }.store(in: &subscriptions)
-
-        
     }
     
 }

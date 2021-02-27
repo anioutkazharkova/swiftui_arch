@@ -31,6 +31,10 @@
 		1D37C4F025EAB03500009516 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C4ED25EAB03500009516 /* SearchModel.swift */; };
 		1D37C4F625EAB28900009516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C4F425EAB28900009516 /* AppDelegate.swift */; };
 		1D37C4F725EAB28900009516 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C4F525EAB28900009516 /* SceneDelegate.swift */; };
+		1D37C52325EABE2E00009516 /* NewsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C52225EABE2E00009516 /* NewsListPresenter.swift */; };
+		1D37C52725EABF4300009516 /* IInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C52625EABF4300009516 /* IInputView.swift */; };
+		1D37C52B25EAC03600009516 /* IModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C52A25EAC03600009516 /* IModel.swift */; };
+		1D37C52E25EAC14400009516 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C52D25EAC14400009516 /* SearchPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		1D37C4ED25EAB03500009516 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		1D37C4F425EAB28900009516 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D37C4F525EAB28900009516 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1D37C52225EABE2E00009516 /* NewsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListPresenter.swift; sourceTree = "<group>"; };
+		1D37C52625EABF4300009516 /* IInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IInputView.swift; sourceTree = "<group>"; };
+		1D37C52A25EAC03600009516 /* IModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IModel.swift; sourceTree = "<group>"; };
+		1D37C52D25EAC14400009516 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,7 @@
 		1D37C4A825EAA04700009516 /* SwiftuiArch */ = {
 			isa = PBXGroup;
 			children = (
+				1D37C52525EABF3700009516 /* base */,
 				1D37C4E925EAB03500009516 /* itemview */,
 				1D37C4EB25EAB03500009516 /* searchview */,
 				1D37C4E125EAAEB400009516 /* newslistview */,
@@ -155,6 +164,7 @@
 				1D37C4E425EAAEEE00009516 /* NewsItemRow.swift */,
 				1D37C4E225EAAEEE00009516 /* NewsListModel.swift */,
 				1D37C4E325EAAEEE00009516 /* NewsListView.swift */,
+				1D37C52225EABE2E00009516 /* NewsListPresenter.swift */,
 			);
 			path = newslistview;
 			sourceTree = "<group>";
@@ -172,8 +182,18 @@
 			children = (
 				1D37C4EC25EAB03500009516 /* SearchView.swift */,
 				1D37C4ED25EAB03500009516 /* SearchModel.swift */,
+				1D37C52D25EAC14400009516 /* SearchPresenter.swift */,
 			);
 			path = searchview;
+			sourceTree = "<group>";
+		};
+		1D37C52525EABF3700009516 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				1D37C52625EABF4300009516 /* IInputView.swift */,
+				1D37C52A25EAC03600009516 /* IModel.swift */,
+			);
+			path = base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,10 +280,14 @@
 				1D37C4AE25EAA04700009516 /* ViewController.swift in Sources */,
 				1D37C4DF25EAADBC00009516 /* ThumbImage.swift in Sources */,
 				1D37C4C625EAA9B500009516 /* ContentResponse.swift in Sources */,
+				1D37C52325EABE2E00009516 /* NewsListPresenter.swift in Sources */,
 				1D37C4E725EAAEEE00009516 /* NewsItemRow.swift in Sources */,
 				1D37C4C925EAA9B500009516 /* NetworkConfiguration.swift in Sources */,
 				1D37C4DD25EAADBC00009516 /* HeaderText.swift in Sources */,
 				1D37C4CE25EAAADF00009516 /* NewsItem.swift in Sources */,
+				1D37C52725EABF4300009516 /* IInputView.swift in Sources */,
+				1D37C52E25EAC14400009516 /* SearchPresenter.swift in Sources */,
+				1D37C52B25EAC03600009516 /* IModel.swift in Sources */,
 				1D37C4CF25EAAADF00009516 /* NewsList.swift in Sources */,
 				1D37C4E525EAAEEE00009516 /* NewsListModel.swift in Sources */,
 				1D37C4C825EAA9B500009516 /* NetworkService.swift in Sources */,
