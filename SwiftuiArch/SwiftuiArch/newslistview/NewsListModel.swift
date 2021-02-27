@@ -11,7 +11,7 @@ import Combine
 
 class NewsListModel : ObservableObject, IModel {
     @Published var newsItems: [NewsItem] = [NewsItem]()
-    
+    var listener: IContainer?
     func update(data: Any?) {
         if let data = data as? [NewsItem] {
             self.newsItems = [NewsItem]()

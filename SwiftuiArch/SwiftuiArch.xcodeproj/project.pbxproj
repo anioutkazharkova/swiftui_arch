@@ -35,6 +35,12 @@
 		1D37C52725EABF4300009516 /* IInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C52625EABF4300009516 /* IInputView.swift */; };
 		1D37C52B25EAC03600009516 /* IModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C52A25EAC03600009516 /* IModel.swift */; };
 		1D37C52E25EAC14400009516 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C52D25EAC14400009516 /* SearchPresenter.swift */; };
+		1D37C53E25EAC96F00009516 /* IModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C53A25EAC96F00009516 /* IModelView.swift */; };
+		1D37C53F25EAC96F00009516 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C53B25EAC96F00009516 /* LazyView.swift */; };
+		1D37C54025EAC96F00009516 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C53C25EAC96F00009516 /* ContainerView.swift */; };
+		1D37C54125EAC96F00009516 /* ContainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C53D25EAC96F00009516 /* ContainerModel.swift */; };
+		1D37C54525EAC97C00009516 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C54325EAC97C00009516 /* ActivityIndicator.swift */; };
+		1D37C54625EAC97C00009516 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C54425EAC97C00009516 /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +73,12 @@
 		1D37C52625EABF4300009516 /* IInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IInputView.swift; sourceTree = "<group>"; };
 		1D37C52A25EAC03600009516 /* IModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IModel.swift; sourceTree = "<group>"; };
 		1D37C52D25EAC14400009516 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		1D37C53A25EAC96F00009516 /* IModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IModelView.swift; sourceTree = "<group>"; };
+		1D37C53B25EAC96F00009516 /* LazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		1D37C53C25EAC96F00009516 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		1D37C53D25EAC96F00009516 /* ContainerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerModel.swift; sourceTree = "<group>"; };
+		1D37C54325EAC97C00009516 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		1D37C54425EAC97C00009516 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +161,8 @@
 		1D37C4D525EAADBC00009516 /* custom */ = {
 			isa = PBXGroup;
 			children = (
+				1D37C54325EAC97C00009516 /* ActivityIndicator.swift */,
+				1D37C54425EAC97C00009516 /* LoaderView.swift */,
 				1D37C4D625EAADBC00009516 /* SeachControl.swift */,
 				1D37C4D725EAADBC00009516 /* Subheader.swift */,
 				1D37C4D825EAADBC00009516 /* HeaderText.swift */,
@@ -190,6 +204,10 @@
 		1D37C52525EABF3700009516 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				1D37C53D25EAC96F00009516 /* ContainerModel.swift */,
+				1D37C53C25EAC96F00009516 /* ContainerView.swift */,
+				1D37C53A25EAC96F00009516 /* IModelView.swift */,
+				1D37C53B25EAC96F00009516 /* LazyView.swift */,
 				1D37C52625EABF4300009516 /* IInputView.swift */,
 				1D37C52A25EAC03600009516 /* IModel.swift */,
 			);
@@ -278,6 +296,7 @@
 				1D37C4E625EAAEEE00009516 /* NewsListView.swift in Sources */,
 				1D37C4F025EAB03500009516 /* SearchModel.swift in Sources */,
 				1D37C4AE25EAA04700009516 /* ViewController.swift in Sources */,
+				1D37C53F25EAC96F00009516 /* LazyView.swift in Sources */,
 				1D37C4DF25EAADBC00009516 /* ThumbImage.swift in Sources */,
 				1D37C4C625EAA9B500009516 /* ContentResponse.swift in Sources */,
 				1D37C52325EABE2E00009516 /* NewsListPresenter.swift in Sources */,
@@ -286,15 +305,20 @@
 				1D37C4DD25EAADBC00009516 /* HeaderText.swift in Sources */,
 				1D37C4CE25EAAADF00009516 /* NewsItem.swift in Sources */,
 				1D37C52725EABF4300009516 /* IInputView.swift in Sources */,
+				1D37C54125EAC96F00009516 /* ContainerModel.swift in Sources */,
 				1D37C52E25EAC14400009516 /* SearchPresenter.swift in Sources */,
+				1D37C54625EAC97C00009516 /* LoaderView.swift in Sources */,
 				1D37C52B25EAC03600009516 /* IModel.swift in Sources */,
 				1D37C4CF25EAAADF00009516 /* NewsList.swift in Sources */,
 				1D37C4E525EAAEEE00009516 /* NewsListModel.swift in Sources */,
 				1D37C4C825EAA9B500009516 /* NetworkService.swift in Sources */,
+				1D37C54025EAC96F00009516 /* ContainerView.swift in Sources */,
 				1D37C4F725EAB28900009516 /* SceneDelegate.swift in Sources */,
 				1D37C4DB25EAADBC00009516 /* SeachControl.swift in Sources */,
 				1D37C4EE25EAB03500009516 /* NewsItemView.swift in Sources */,
 				1D37C4DC25EAADBC00009516 /* Subheader.swift in Sources */,
+				1D37C54525EAC97C00009516 /* ActivityIndicator.swift in Sources */,
+				1D37C53E25EAC96F00009516 /* IModelView.swift in Sources */,
 				1D37C4DE25EAADBC00009516 /* CachedImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

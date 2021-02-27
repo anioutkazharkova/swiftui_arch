@@ -11,6 +11,8 @@ import SwiftUI
 import Combine
 
 class SearchModel : ObservableObject, IModel {
+    var listener: IContainer?
+    
    @Published var newsItems: [NewsItem] = [NewsItem]()
     
     func update(data: Any?) {
