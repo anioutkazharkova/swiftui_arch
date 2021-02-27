@@ -15,18 +15,18 @@ struct SearchView: View {
             SearchControl(text: $text) { (search) in
                 self.model.loadData(query: search)
             }
-                List(model.newsItems, id: \.uuid) {item in
-                    NavigationLink(
-                        destination: NewsItemView(item: item)) {
-                        NewsItemRow(item: item)
-                    }
+            List(model.newsItems) {item in
+                NavigationLink(
+                    destination: LazyView(NewsItemView(item: item))) {
+                    LazyView(NewsItemRow(item: item))
                 }
             }
         }
-}
-
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
     }
 }
+    
+    struct SearchView_Previews: PreviewProvider {
+        static var previews: some View {
+            SearchView()
+        }
+    }

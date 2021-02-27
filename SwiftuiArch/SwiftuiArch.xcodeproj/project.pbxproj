@@ -31,6 +31,7 @@
 		1D37C4F025EAB03500009516 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C4ED25EAB03500009516 /* SearchModel.swift */; };
 		1D37C4F625EAB28900009516 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C4F425EAB28900009516 /* AppDelegate.swift */; };
 		1D37C4F725EAB28900009516 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C4F525EAB28900009516 /* SceneDelegate.swift */; };
+		1D37C50325EAB99F00009516 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D37C50225EAB99F00009516 /* LazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		1D37C4ED25EAB03500009516 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		1D37C4F425EAB28900009516 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D37C4F525EAB28900009516 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1D37C50225EAB99F00009516 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		1D37C4A825EAA04700009516 /* SwiftuiArch */ = {
 			isa = PBXGroup;
 			children = (
+				1D37C50025EAB98F00009516 /* base */,
 				1D37C4E925EAB03500009516 /* itemview */,
 				1D37C4EB25EAB03500009516 /* searchview */,
 				1D37C4E125EAAEB400009516 /* newslistview */,
@@ -176,6 +179,14 @@
 			path = searchview;
 			sourceTree = "<group>";
 		};
+		1D37C50025EAB98F00009516 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				1D37C50225EAB99F00009516 /* LazyView.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +269,7 @@
 				1D37C4E625EAAEEE00009516 /* NewsListView.swift in Sources */,
 				1D37C4F025EAB03500009516 /* SearchModel.swift in Sources */,
 				1D37C4AE25EAA04700009516 /* ViewController.swift in Sources */,
+				1D37C50325EAB99F00009516 /* LazyView.swift in Sources */,
 				1D37C4DF25EAADBC00009516 /* ThumbImage.swift in Sources */,
 				1D37C4C625EAA9B500009516 /* ContentResponse.swift in Sources */,
 				1D37C4E725EAAEEE00009516 /* NewsItemRow.swift in Sources */,
