@@ -8,11 +8,11 @@
 import SwiftUI
 
 protocol INewsListView : IInputView, IModelView {
-    var presenter: INewsListPresenter? {get set}
+    var output: INewsListInteractor? {get set}
 }
 
 struct NewsListView: View {
-     var presenter: INewsListPresenter? = nil
+     var output: INewsListInteractor? = nil
     
    
     @ObservedObject var model: NewsListModel = NewsListModel()
@@ -29,7 +29,7 @@ struct NewsListView: View {
             }){
                 Image("search").resizable().frame(width: 20, height: 20, alignment: .topTrailing)
             }).onAppear(){ 
-                self.presenter?.loadData()
+                self.output?.loadData()
             }
     }
 }

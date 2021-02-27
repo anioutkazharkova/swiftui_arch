@@ -14,7 +14,9 @@ class NewsListConfigurator: IConfugator {
         var view = NewsListView()
         let presenter = NewsListPresenter()
         presenter.view = view
-        view.presenter = presenter
+        let interactor = NewsListInteractor()
+        interactor.presenter = presenter
+        view.output = interactor
         return UIHostingController<ContainerView<NewsListView>>(rootView: ContainerView(content: view))
     }
 }

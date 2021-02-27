@@ -8,36 +8,23 @@
 import Foundation
 import Combine
 
-protocol INewsListPresenter : class {
+protocol INewsListPresenter : class, IPresenter {
     var view: INewsListView? {get set}
-    func loadData()
+    func present(response: NewsListResponse)
 }
 
 class NewsListPresenter : INewsListPresenter, IPresenter {
-    var subscriptions = Set<AnyCancellable>()
-    private let service = NetworkService.shared
-    private var newsItems = [NewsItem]()
-    
     var view: INewsListView? = nil
     
-    func loadData() {
-        let url = "top-headlines?language=en"
-        self.showLoading()
-        _ =  self.service.request(path: url, method: "GET").sink { [weak self] (completion) in
-            self?.hideLoading()
-            switch completion {
-            case .failure(let error):
-                print(error.localizedDescription)
-                self?.view?.showError(error: error.localizedDescription)
-            case .finished:
-                print("completed")
-            }
-        } receiveValue: { (list:NewsList) in
-            let loaded = list.articles
-            self.newsItems = loaded
-            self.view?.updateModel(data: self.newsItems)
-        }.store(in: &subscriptions)
+    func present(response: NewsListResponse) {
+        switch response {
+        case .success(let news):
+            self.view?.updateModel(data: news)
+        case .error(let error):
+            self.showError(error: error)
+        }
     }
+    
     
     func showError(error: String) {
         self.view?.showError(error: error)
