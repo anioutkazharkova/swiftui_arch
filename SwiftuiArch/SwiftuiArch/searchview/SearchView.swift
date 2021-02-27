@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-protocol ISearchView : IInputView {
-    
+protocol ISearchView : IInputView,IModelView {
+    var presenter: ISearchPresenter? {get set}
 }
 
 struct SearchView: View {
@@ -16,18 +16,13 @@ struct SearchView: View {
     @ObservedObject var model: SearchModel = SearchModel()
     
     var presenter: ISearchPresenter? = nil
-   
-   init() {
-       presenter = SearchPresenter()
-       presenter?.view = self
-   }
     
     var body: some View {
         VStack {
             SearchControl(text: $text) { (search) in
                 self.presenter?.loadData(query: search)
             }
-            List(model.newsItems, id: \.uuid) {item in
+            List(model.newsItems) {item in
                 NavigationLink(
                     destination: NewsItemView(item: item)) {
                     NewsItemRow(item: item)
@@ -40,6 +35,10 @@ struct SearchView: View {
 extension SearchView : ISearchView {
     func updateModel(data: Any?) {
         self.model.update(data: data)
+    }
+    
+    var viewModel: IModel? {
+        return model
     }
 }
 
